@@ -17,7 +17,7 @@ if (process.env.DATABASE_URL) {
     user: 'postgres',
     host: 'localhost',
     database: 'dados_cnpj',
-    password: 'SUA_SENHA_AQUI',
+    password: 'mY[1HKgFpKqc',
     port: 5432,
   };
 }
