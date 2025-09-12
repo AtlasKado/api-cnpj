@@ -1,14 +1,29 @@
-// Importa a biblioteca do PostgreSQL
 const { Pool } = require('pg');
 
-// Configura a conexão com o banco de dados
-const pool = new Pool({
-  user: 'postgres',
-  host: 'localhost',
-  database: 'dados_cnpj',
-  password: 'mY[1HKgFpKqc', 
-  port: 5432,
-});
+// Configurações da conexão
+let dbConfig;
 
-// Exporta o pool de conexões para que outros ficheiros possam usá-lo
+// Se a variável de ambiente DATABASE_URL existir (no Render), use-a.
+if (process.env.DATABASE_URL) {
+  dbConfig = {
+    connectionString: process.env.DATABASE_URL,
+    ssl: {
+      rejectUnauthorized: false
+    }
+  };
+} else {
+  // Caso contrário, use a configuração local para desenvolvimento.
+  dbConfig = {
+    user: 'postgres',
+    host: 'localhost',
+    database: 'dados_cnpj',
+    password: 'SUA_SENHA_AQUI',
+    port: 5432,
+  };
+}
+
+const pool = new Pool(dbConfig);
 module.exports = pool;
+
+
+
