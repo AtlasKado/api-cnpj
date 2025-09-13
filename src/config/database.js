@@ -26,4 +26,3 @@ const pool = new Pool(dbConfig);
 module.exports = pool;
 
 
-
