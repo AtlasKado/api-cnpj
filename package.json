@@ -13,5 +13,13 @@
   "dependencies": {
     "express": "^5.1.0",
     "pg": "^8.16.3"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AtlasKado/api-cnpj.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AtlasKado/api-cnpj/issues"
+  },
+  "homepage": "https://github.com/AtlasKado/api-cnpj#readme"
 }
